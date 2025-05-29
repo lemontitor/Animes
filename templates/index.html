@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Extrator de Link de Anime</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Extrator de Link - AnimeFire</h1>
+        <form method="POST">
+            <label for="anime">Nome do Anime:</label>
+            <input type="text" id="anime" name="anime" required>
+
+            <label for="episodio">Número do Episódio:</label>
+            <input type="text" id="episodio" name="episodio" required>
+
+            <button type="submit">Extrair Link</button>
+        </form>
+
+        {% if link %}
+           <div class="resultado">
+        <p><strong>Link Extraído:</strong>
+            <a href="{{ link }}" target="_blank" rel="noopener noreferrer">{{ link }}</a>
+        </p>
+    </div>
+        {% endif %}
+    </div>
+</body>
+</html>
